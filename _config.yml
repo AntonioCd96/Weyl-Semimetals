@@ -8,8 +8,13 @@ launch_buttons:
   binderhub_url  : https://mybinder.org
   thebe          : true
 
+notebook_interface : "notebook"
+
+
+
 
 latex:
+  latex_engine : "xelatex"      
   latex_documents:
     targetname: book.tex
 
@@ -21,7 +26,7 @@ sphinx:
     bibtex_reference_style: author_year
 
 execute:
-  execute_notebooks: "force"
+  execute_notebooks: "cache"
 
 
 parse:
