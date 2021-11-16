@@ -46,17 +46,11 @@
 # In[1]:
 
 
+from pylab import *
 import multiprocessing as mp
 
 
 # In[2]:
-
-
-get_ipython().run_line_magic('pylab', 'inline')
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
-# In[3]:
 
 
 def EigenV(k):
@@ -65,7 +59,7 @@ def EigenV(k):
     return E
 
 
-# In[4]:
+# In[3]:
 
 
 res=pi/101 #resolucion
@@ -85,7 +79,7 @@ def HWeyl(k_x,k_y,k_z):
     return HW
 
 
-# In[5]:
+# In[4]:
 
 
 a_d= len(k_xb) #dimension del arreglo
@@ -96,13 +90,13 @@ KZ    = KZ.reshape((a_d*a_d,))
 k     = column_stack((KX,zeros_like(KX),KZ))
 
 
-# In[6]:
+# In[5]:
 
 
 get_ipython().run_cell_magic('time', '', '\nEk = map(EigenV,k) #función  y los valores que toma\nEk = array(list(Ek))\nprint(Ek)')
 
 
-# In[7]:
+# In[6]:
 
 
 Enm = Ek.T[0].reshape((a_d,a_d)).T#primer T para +/- segundo para X->Z
@@ -112,20 +106,20 @@ Enp = Ek.T[1].reshape((a_d,a_d)).T
 KX,KZ = meshgrid(k_xb,k_zb)
 
 
-# In[8]:
+# In[7]:
 
 
 import plotly.graph_objects as go
 
 
-# In[9]:
+# In[8]:
 
 
 DATA = [ go.Surface( z=Enm, x=(KX),y=(KZ),opacity=0.9,  colorbar_x=0.75,colorscale='deep'),
         go.Surface( z=Enp,x=KX,y=KZ,opacity=0.6, colorbar_x=0.9)]
 
 
-# In[10]:
+# In[9]:
 
 
 fig = go.Figure( data=DATA )

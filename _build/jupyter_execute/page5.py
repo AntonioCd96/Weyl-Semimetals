@@ -34,8 +34,8 @@ mpl.rcParams.update({'ytick.major.width':1.5})
 mpl.rcParams.update({'ytick.minor.width':1.0})
 
 
-# ---
-# # Hamiltoniano del sistema
+# 
+# # <center> Hamiltoniano del sistema </center>
 # 
 # $
 # \begin{eqnarray}
@@ -121,7 +121,7 @@ ax[1].set_xlabel(r"$K_z$",fontsize=26)
 savefig("WSMGrushinBulkGap.pdf",bbox_inches='tight')
 
 
-# In[6]:
+# In[9]:
 
 
 NY_WSM=WSH.cut_piece(100,1,glue_edgs=False) #numero de reps, en la direccion 0x,1y,2z, mi sistema se redujo dimensionalmente
@@ -130,22 +130,7 @@ NX_WSM=WSH.cut_piece(100,0,glue_edgs=False)
 NZ_WSM=WSH.cut_piece(100,2,glue_edgs=False)
 
 
-# In[ ]:
-
-
-NZ_WSM=WSH.cut_piece(21,2,glue_edgs=False)
-NYZ_WSM=NZ_WSM.cut_piece(21,1,glue_edgs=False)
-k = [[-0.5],[0.],[0.5]] # Punto por los cuales que quiero que pase. Son los punto de al simetria
-                                 #unidades en unidades de V de red 1=2pi/a
-k_label=[r"$-X$",r"$\Gamma$",r"$X$"]
-(k_vec,k_dist,k_node)=NYZ_WSM.k_path(k,101,report=False)
-Ek2,ψ2 =NYZ_WSM.solve_all(k_vec,eig_vectors=True)
-for h in range(len(Ek2)):
-    plt.plot(k_dist, Ek2[h,:],alpha=0.5, color="black", linewidth=0.5)
-ylim(-2,2)
-
-
-# In[31]:
+# In[12]:
 
 
 k=[[-0.5,0],[0.0,0],[0.5,0]] # Punto por los cuales que quiero que pase. Son los punto de al simetria
@@ -160,11 +145,11 @@ k_label2=[r"$-X$",r"$\Gamma$",r"$X$"]
 EkfinY=NY_WSM.solve_all(k_vec)
 k=[[-0.5,0],[0.0,0],[0.5,0]]
 k_label3=[r"$-Y$",r"$\Gamma$",r"$Y$"]
-(k_vec,k_dist,k_node)=NY_WSM.k_path(k,501, report=False)
+(k_vec,k_dist,k_node)=NZ_WSM.k_path(k,501, report=False)
 EkfinZ=NZ_WSM.solve_all(k_vec)
 
 
-# In[33]:
+# In[13]:
 
 
 fig,ax  = plt.subplots(ncols=3,nrows=1,figsize=(20,6),
@@ -196,117 +181,9 @@ ax[2].set_xlabel(r"Finite System in $Z|_{K_Y=0}$",fontsize=26)
 savefig("Finite_systems_Grushin.pdf",bbox_inches='tight')
 
 
-# In[10]:
-
-
-###-------Finito en X-------#                      
-k=[[0,0],[0.5,0],[1.0,0]]
-(k_vec,k_dist,k_node)=NX_WSM.k_path(k,101, report=False)
-EkfinX1=NX_WSM.solve_all(k_vec)
-
-k=[[0,0],[0,0.5],[0,1.0]]
-(k_vec,k_dist,k_node)=NX_WSM.k_path(k,101, report=False)
-EkfinX2=NX_WSM.solve_all(k_vec)
-###-------Finito en Y-------#     
-
-k=[[0,0],[0.5,0],[1.0,0]]
-(k_vec,k_dist,k_node)=NY_WSM.k_path(k,101, report=False)
-EkfinY1=NY_WSM.solve_all(k_vec)
-
-k=[[0,0],[0,0.5],[0,1.0]]
-(k_vec,k_dist,k_node)=NY_WSM.k_path(k,101, report=False)
-EkfinY2=NY_WSM.solve_all(k_vec)
-###-------Finito en Z-------#     
-
-k=[[0,0],[0.5,0],[1.0,0]]
-(k_vec,k_dist,k_node)=NZ_WSM.k_path(k,101, report=False)
-EkfinZ1=NZ_WSM.solve_all(k_vec)
-
-k=[[0,0],[0,0.5],[0,1.0]]
-(k_vec,k_dist,k_node)=NZ_WSM.k_path(k,101, report=False)
-EkfinZ2=NZ_WSM.solve_all(k_vec)
-
-
-# In[11]:
-
-
-fig,ax  = plt.subplots(ncols=2,nrows=1,figsize=(20,6),
-                       gridspec_kw = {'wspace':0.2, 'hspace':0, 'width_ratios': [1,1]})
-for n in range(0, len(EkfinX1)):
-    
-    ax[0].plot(k_dist,EkfinX1[n,:], c='blue', alpha=0.6) #la long de Ek fin tiene todo
-    ax[1].plot(k_dist,EkfinX2[n,:], c='blue', alpha=0.6) #la long de Ek fin tiene todo
-    
-for i in range(0,2):
-#     ax[i].set_xticks(k_node) # puntos de alta simetria, valor que correspomde en k_path
-#     ax[i].set_xticklabels(k_label )
-#     ax[i].set_yticks([-2,0.,2])
-    # xsticklabels(k_label) 
-    ax[i].spines['right'].set_visible(False)
-    ax[i].spines['top'].set_visible(False)
-    
-ax[0].set_ylabel(r"$E[t]$",fontsize=26)
-ax[0].set_xlabel(r"Finite systemy in $K_x$",fontsize=26)
-ax[1].set_xlabel(r"Finite system in $K_y$",fontsize=26)
-
-
-# puntos de alta simetria, valor que correspomde en k_path
-
-# savefig("Finite_systems_Grushin.pdf",bbox_inches='tight')
-#En 0 da 
-#En 1 da
-#En 2 no da
-
-
-# In[12]:
-
-
-fig,ax  = plt.subplots(ncols=2,nrows=1,figsize=(20,6),
-                       gridspec_kw = {'wspace':0.2, 'hspace':0, 'width_ratios': [1,1]})
-for n in range(0, len(EkfinX1)):
-    
-    ax[0].plot(k_dist,EkfinY1[n,:], c='blue', alpha=0.6) #la long de Ek fin tiene todo
-    ax[1].plot(k_dist,EkfinY2[n,:], c='blue', alpha=0.6) #la long de Ek fin tiene todo
-    
-for i in range(0,2):
-#     ax[i].set_xticks(k_node) # puntos de alta simetria, valor que correspomde en k_path
-#     ax[i].set_xticklabels(k_label )
-#     ax[i].set_yticks([-2,0.,2])
-    # xsticklabels(k_label) 
-    ax[i].spines['right'].set_visible(False)
-    ax[i].spines['top'].set_visible(False)
-    
-ax[0].set_ylabel(r"$E[t]$",fontsize=26)
-ax[0].set_xlabel(r"Finite systemy in $K_x$",fontsize=26)
-ax[1].set_xlabel(r"Finite system in $K_y$",fontsize=26)
-
-
-# In[13]:
-
-
-fig,ax  = plt.subplots(ncols=2,nrows=1,figsize=(20,6),
-                       gridspec_kw = {'wspace':0.2, 'hspace':0, 'width_ratios': [1,1]})
-for n in range(0, len(EkfinX1)):
-    
-    ax[0].plot(k_dist,EkfinZ1[n,:], c='blue', alpha=0.6) #la long de Ek fin tiene todo
-    ax[1].plot(k_dist,EkfinZ2[n,:], c='blue', alpha=0.6) #la long de Ek fin tiene todo
-    
-for i in range(0,2):
-#     ax[i].set_xticks(k_node) # puntos de alta simetria, valor que correspomde en k_path
-#     ax[i].set_xticklabels(k_label )
-#     ax[i].set_yticks([-2,0.,2])
-    # xsticklabels(k_label) 
-    ax[i].spines['right'].set_visible(False)
-    ax[i].spines['top'].set_visible(False)
-    
-ax[0].set_ylabel(r"$E[t]$",fontsize=26)
-ax[0].set_xlabel(r"Finite systemy in $K_x$",fontsize=26)
-ax[1].set_xlabel(r"Finite system in $K_y$",fontsize=26)
-
-
 # ## Interactivo
 
-# In[ ]:
+# In[14]:
 
 
 #Parámetros
@@ -340,7 +217,7 @@ def WSHTot(a=0.5,m=0.5,tp=0.5):
     ###############---------Inicia extraccion de información-----------##############
     k                     = [[0,0,-0.5],[0,0,0.0],[0,0,0.5]] # Punto por los cuales que quiero que pase. Son los punto de al simetria
                                      #unidades en unidades de V de red 1=2pi/a
-    k_label               = ["-Z","Γ","Z"]
+    k_label               = ["-Z",r"$\Gamma$","Z"]
     (k_vec,k_dist,k_node) = WSH.k_path(k,1001,report=False)
     Ek,U                  = WSH.solve_all(k_vec,eig_vectors=True)
 
@@ -354,9 +231,9 @@ def WSHTot(a=0.5,m=0.5,tp=0.5):
     
 
 
-# ## Subplots
+# ## Exploración de la variación de parámetros. 
 
-# In[14]:
+# In[15]:
 
 
 
@@ -395,12 +272,6 @@ def WSHTot(a=0.5,m=0.5,tp=0.5):
 
 
 # In[16]:
-
-
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
-# In[36]:
 
 
 fig, axs = plt.subplots(2, 2,figsize=(15, 11),
@@ -451,5 +322,11 @@ savefig("VarGrushin.pdf",bbox_inches='tight')
 # In[ ]:
 
 
-WSHTot(0.5,0.5,0.5)[0]
+
+
+
+# In[ ]:
+
+
+
 

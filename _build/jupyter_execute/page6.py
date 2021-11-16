@@ -29,14 +29,14 @@
 # 
 # 
 
-# In[1]:
+# In[14]:
 
 
 from pythtb import *
 from pylab import *
 
 
-# In[2]:
+# In[15]:
 
 
 import glob
@@ -56,14 +56,14 @@ mpl.rcParams.update({'ytick.major.width':1.5})
 mpl.rcParams.update({'ytick.minor.width':1.0})
 
 
-# In[3]:
+# In[16]:
 
 
 from palettable.cubehelix import Cubehelix
 palette = Cubehelix.make(start=-0.5, rotation=0.3,reverse=True,n=10)
 
 
-# In[4]:
+# In[17]:
 
 
 #Parámetros
@@ -163,7 +163,7 @@ ax[1].set_xlabel(r"$K_x$",fontsize=26)
 savefig("WSMMMBulkGapTI.pdf",bbox_inches='tight')
 
 
-# In[5]:
+# In[18]:
 
 
 L= 100
@@ -174,7 +174,7 @@ NZ_WSM=WSH.cut_piece(L,2,glue_edgs=False)
 
 # ## Exploración de la estructura de bandas en distintos planos del material
 
-# In[6]:
+# In[20]:
 
 
 
@@ -194,7 +194,7 @@ k_label3=[r"$\Gamma$",r"$X$",r"$\Gamma$"]
 EkfinZ10=NZ_WSM.solve_all(k_vec)
 
 
-# In[7]:
+# In[21]:
 
 
 fig,ax  = plt.subplots(ncols=3,nrows=1,figsize=(20,6),
@@ -231,7 +231,7 @@ savefig("Finite_systems_MM_TII.pdf",bbox_inches='tight')
 
 # ## Exploración de la estructura de bandas en el material finito en X
 
-# In[8]:
+# In[22]:
 
 
 ###-------Finito en X-------#     
@@ -266,7 +266,7 @@ k=[[z,0],[z,0.5],[z,1.0]]
 EkfinX15=NX_WSM.solve_all(k_vec)
 
 
-# In[11]:
+# In[23]:
 
 
 fig,ax=plt.subplots(ncols=3,nrows=2,figsize=(20,12),
@@ -295,6 +295,8 @@ ax[1,0].set_xlabel(r"Finite system in $X|_{k_x=0.3}$",fontsize=26)
 ax[1,1].set_xlabel(r"Finite systemy in $X|_{k_z=0.4}$",fontsize=26)
 ax[1,2].set_xlabel(r"Finite system in $X|_{k_x=0.5}$",fontsize=26)
 
+
+# Como se puede denotar en la figura anterior, la variación de $k_z$ sila como evolucuiona la relacion de dispersion a lo alrgo de la primera mitad de la zona de Brillouin.
 
 # In[9]:
 
@@ -407,7 +409,9 @@ ax[1,2].set_xlabel(r"Finite system in $Y|_{k_z=0.50}$",fontsize=26)
 savefig("Perfil_Capas_WSM_TII.pdf", bbox_inches="tight")
 
 
-# In[29]:
+# Se denota cómo los arcos de Fermi van evolucionando conforme se avanza en la zona de Brillouin. Si este avabce se hiciera continuo se formarian dos planos interceptados extactamente en el arco de Fermi. Dichos planos corresponderian a la superficie de Fermi.
+
+# In[48]:
 
 
 ###-------Finito en Y-------#     
@@ -482,9 +486,11 @@ ax.view_init(0, -90)
 savefig("Planes_Z_TII.pdf")
 
 
+# Como se puede denotar en la figura anterior, la variación de $k_z$ sila como evolucuiona la relacion de dispersion a lo alrgo de la primera mitad de la zona de Brillouin.
+
 # ## Exploración de la estructura de bandas en el material finito en Z
 
-# In[13]:
+# In[24]:
 
 
 z=0
@@ -518,7 +524,7 @@ k=[[z,0],[z,0.5],[z,1.0]]
 EkfinZ15=NZ_WSM.solve_all(k_vec)
 
 
-# In[12]:
+# In[25]:
 
 
 fig,ax=plt.subplots(ncols=3,nrows=2,figsize=(20,12),
@@ -629,7 +635,7 @@ savefig("Planes_X_TI.pdf")
 
 # #### For a infinite system
 
-# In[8]:
+# In[26]:
 
 
 
@@ -648,7 +654,7 @@ Edos=Edos.flatten()
 
 # #### For a finite system
 
-# In[31]:
+# In[27]:
 
 
 L     = 100 #Numero de celdas
@@ -656,7 +662,7 @@ N_WSM = WSH.cut_piece(L,1,glue_edgs=False) #numero de reps, en la direccion 0x,1
                                             #modo rebanada de jamón
 
 
-# In[32]:
+# In[28]:
 
 
 # calculate density of states
@@ -674,7 +680,7 @@ Ekf=Ekf.flatten()
 
 # #### Comparing DOS for a finite system vs a infinite system
 
-# In[ ]:
+# In[34]:
 
 
 
@@ -684,7 +690,7 @@ print('Plotting DOS...')
 fig, ax = plt.subplots(1,2,figsize=(14, 6),
                        gridspec_kw = {'wspace':0.4, 'hspace':0, 'width_ratios': [1, 1]})
 
-ax[0].hist(Edos,501)
+ax[0].hist(Edos,501, color="orange")
 ax[0].set_title("WSM tipo I sistema infinito")
 ax[0].set_xlabel("Band energy")
 ax[0].set_ylabel("Number of states")
@@ -696,19 +702,19 @@ ax[1].set_ylabel("Number of states")
 
 
 # make an PDF figure of a plot
-fig.tight_layout()
+
 get_ipython().run_line_magic('time', '')
 
 
-# In[ ]:
+# In[44]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(14, 6),
                        gridspec_kw = {'wspace':0.4, 'hspace':0, 'width_ratios': [1, 1]})
 
-ax[0].hist(Edos,501)
-ax[0].hist(Ekf,501)
-
+ax[0].hist(Edos,501,label="Sistema infinito")
+ax[0].hist(Ekf,501,label="Sistema finito")
+ax[0].legend(loc=0,fontsize=14)
 ax[0].set_xlabel("Band energy")
 ax[0].set_ylabel("Number of states")
 
@@ -727,13 +733,15 @@ savefig("DOS-Fin-vs-DOS-Inf.pdf")
 
 # ## Densidad de estados usando Funciones de Green.
 
-# In[21]:
+# La función de Green es uan herramienta matematica que nos permite obtener la DOS de un hamiltoniano independiente del tiempo. A diferencia de los histogramas, tiene la ventaja de que genera curvas suaves.
+
+# In[41]:
 
 
 Et=linspace(-10,13,1001)
 def G(Edos):
     GreenP = []
-    f      = 0.1 #al aumentarlo, mejora la fidelidad al hsitograma
+    f      = 0.01 #al aumentarlo, mejora la fidelidad al hsitograma
     for i in Et:
         g  = sum(1/(i+f*1J-Edos))
         GreenP.append(g)
@@ -751,19 +759,13 @@ def G(Edos):
      
 
 
-# In[33]:
+# In[42]:
 
 
 G_f,G_inf=G(Edos),G(Ekf)
 
 
-# In[34]:
-
-
-shape(G_f)
-
-
-# In[35]:
+# In[43]:
 
 
 
@@ -782,15 +784,10 @@ ax[1].plot(Et,G_inf[0])
 ax[1].plot(Et,G_f[0])
 
 ax[1].set_xlim([-1,1])
-ax[1].set_ylim([0,0.25])
+ax[1].set_ylim([0,0.05])
 
 ax[0].legend(loc=0,fontsize=14)
-# make an PDF figure of a plot
-fig.tight_layout()
-get_ipython().run_line_magic('time', '')
-# plt.plot(Et,GIP)
-# plt.plot(Et,GIM)
-# plt.plot(Et,-GRP)
+
 ax[1].set_xlabel("Band energy")
 ax[1].set_ylabel("Number of states")
 ax[1].spines['right'].set_visible(False)
@@ -802,12 +799,14 @@ ax[0].spines['top'].set_visible(False)
 # savefig("Green_fuc_DOS")
 
 
-# In[37]:
+# ### Densidad de esatdos acomplada con la estructura de bandas
+
+# In[50]:
 
 
 fig,ax  = plt.subplots(ncols=2,nrows=1,figsize=(14.0,6),
                        gridspec_kw = {'wspace':0.2, 'hspace':0, 'width_ratios': [ 1,1]})
-# x=linspace(0,1,501)
+x=linspace(0,1,101)
 for n in range(len(EkfinY10)):
     ax[0].plot(x ,EkfinY10[n,:], c="black", alpha=0.5,linewidth=0.4)
     ax[0].plot(x ,EkfinY11[n,:], c="black", alpha=0.3, linewidth=0.4)
@@ -836,63 +835,19 @@ ax[1].plot(G_inf[0],Et)
 savefig("Dispersion-DOS_TII.pdf",bbox_inches="tight")
 
 
-# In[ ]:
+# In[51]:
 
 
 trapz(G_f[0], Et)
 
 
-# In[ ]:
-
-
-k = [[0,0],[0.5 ,0],[1,0]]   
-(k_vec,k_dist,k_node)=NY_WSM.k_path(k,1001, report=False)
-EkfinY,ψk=NY_WSM.solve_all(k_vec,eig_vectors=True)
-
-
-# In[ ]:
-
-
-# Grafico para el butlo del material
-I     = []
-index = []
-for i in range(len(ψk)):
-    
-    In = []
-    for j in range(len(ψk[i,:])):
-        h=0
-        for l in range(L):
-            h+=real(ψk[i,:][j][L]*conj(ψk[i,:][j][L])) 
-        In.append(h) 
-    index.append(argsort(In))
-    I.append(In)
-Ibulto = array(I)
-
-
-# In[ ]:
-
-
-fig,ax  = plt.subplots(ncols = 2,nrows = 1, figsize = (14,6)) #
-for n in range(len(EkfinY)):
-    Ekval= EkfinY[n,:]
-    amp  = Ibulto[n] 
-    cmap = ax[0].scatter(k_dist,Ekval,c =amp ,cmap = 'cubehelix',s = 1.0, alpha=0.5)
-    
-
-ax[0].set_xticks(k_node) # puntos de alta simetria, valor que correspomde en k_path
-ax[0].set_xticklabels(k_label)
-ax[0].set_xlabel(r"$K_X$")
-ax[0].set_ylabel("E")
-fig.colorbar(cmap, ax=ax[0])
-
-ax[1].plot(G_f[0],Et)
-
+# La celda anterior comprueba que la densidad de estados dada por la función de Green está normalizada.
 
 # # IPR
 # 
 # El IPR o Inverse Participation Ratio (IPR, por sus siglas en inglés) es una cantidad que perimte saber qué tan lo laizados están los estados electronicos en un material. En esta sección se presenta un grafico coloreado con el Log|IPR|, de manera que los colores más obsucuros elucidarán qué estados son los más localizados. 
 
-# In[13]:
+# In[52]:
 
 
 print("building finite sistems")
@@ -903,7 +858,7 @@ NY_WSM=WSH.cut_piece(L,1,glue_edgs=False) #numero de reps, en la direccion 0x,1y
 # NNYX_WSM=NY_WSM.cut_piece(L,0,glue_edgs=False)
 
 
-# In[14]:
+# In[53]:
 
 
 print("Extracting eigenvectors and eigenvalues")
@@ -920,7 +875,7 @@ Ekfin2YZ, ψk1=NY_WSM.solve_all(k_vec,eig_vectors=True)
 # savez_compressed("Data_YX_γ={}".format(γ), D_k=k_dist,D_Ek=Ekfin2YX, U=ψk2)
 
 
-# In[15]:
+# In[54]:
 
 
 print("Calculating IPR")
@@ -940,7 +895,7 @@ Ik1 = array(Ik1)
 savez_compressed("Data_Ik1_γ={}".format(γ),D_Ik1=Ik1)
 
 
-# In[16]:
+# In[55]:
 
 
 fig,ax   = plt.subplots(ncols = 1,nrows = 1, figsize = (6,6)) #
@@ -959,7 +914,14 @@ savefig("IPR_Y_γ={}.pdf".format(γ),bbox_inches="tight")
 
 # ## Interactivo
 
-# In[ ]:
+# In[57]:
+
+
+from ipywidgets import interact, interactive, fixed, interact_manual
+import ipywidgets as widgets
+
+
+# In[59]:
 
 
 #Parámetros
@@ -1006,7 +968,7 @@ def WSHTot(a=1.0,m=1.0,tx=0.5, t=0.5, γ=1.5):
     ###############---------Inicia extraccion de información-----------##############
     k                     = [[-0.5,0,0],[0,0,0.0],[0.5,0,0]] # Punto por los cuales que quiero que pase. Son los punto de al simetria
                                      #unidades en unidades de V de red 1=2pi/a
-    k_label               = ["-Z","Γ","Z"]
+    k_label               = ["-Z",r"$\Gamma$","Z"]
     (k_vec,k_dist,k_node) = WSH.k_path(k,1001,report=False)
     Ek,U                  = WSH.solve_all(k_vec,eig_vectors=True)
 
@@ -1022,7 +984,7 @@ def WSHTot(a=1.0,m=1.0,tx=0.5, t=0.5, γ=1.5):
 
 # ## Subplots
 
-# In[ ]:
+# In[60]:
 
 
 
@@ -1074,17 +1036,11 @@ def WSHTot(a=1.0,m=1.0,tx=0.5, t=0.5, γ=1.5):
     
 
 
-# In[ ]:
-
-
-get_ipython().run_line_magic('matplotlib', 'notebook')
-
-
-# In[ ]:
+# In[72]:
 
 
 fig, axs = plt.subplots(2, 2,figsize=(15, 11),
-                       gridspec_kw = {'wspace':0.4, 'hspace':0.4, 'width_ratios': [1, 1]})
+                       gridspec_kw = {'wspace':0.6, 'hspace':0.4, 'width_ratios': [1, 1]})
 
 
 k_dist, Ek, U, k_node, k_label=WSHTot(a=1.0,m=1.0,tx=0.5, t=0.5, γ=0)
@@ -1092,28 +1048,28 @@ axs[0, 0].plot(k_dist,Ek[0])
 axs[0, 0].plot(k_dist, Ek[1])
 axs[0, 0].set_xticks(k_node)
 axs[0, 0].set_xticklabels(k_label)
-axs[0, 0].set_title("WSM Type I: a=1.0, m=1.0, $t_x=0.5$, t=0.5, $\gamma=0.0$")
+axs[0, 0].set_title("WSM TI: a=1.0, m=1.0, $t_x=0.5$, t=0.5, $\gamma=0.0$")
 
 k_dist, Ek, U, k_node, k_label=WSHTot(a=1.0,m=1-0,tx=0.5, t=3.5, γ=1.5)
 axs[0, 1].plot(k_dist, Ek[0])
 axs[0, 1].plot(k_dist, Ek[1])
 axs[0, 1].set_xticks(k_node)
 axs[0, 1].set_xticklabels(k_label)
-axs[0, 1].set_title("WSM Type II: a=1.0, m=1.0, $t_x=0.5$, t=0.5, $\gamma=3t$")
+axs[0, 1].set_title("TII: a=1.0, m=1.0, $t_x=0.5$, t=0.5, $\gamma=3t$")
 
 k_dist, Ek, U, k_node, k_label=WSHTot(a=1.0,m=0.5,tx=0.5, t=3.0, γ=1.5)
 axs[1, 0].plot(k_dist, Ek[0])
 axs[1, 0].plot(k_dist, Ek[1])
 axs[1, 0].set_xticks(k_node)
 axs[1, 0].set_xticklabels(k_label)
-axs[1, 0].set_title("WSM Type II: a=1.0, m=0.5, $t_x=0.5$, t=0.5, $\gamma=3t$")
+axs[1, 0].set_title("a=1.0, m=0.5, $t_x=0.5$, t=0.5, $\gamma=3t$")
 
 k_dist, Ek, U, k_node, k_label=WSHTot(a=1.0,m=0.5,tx=1.0, t=0.5, γ=1.5)
 axs[1, 1].plot(k_dist, Ek[0])
 axs[1, 1].plot(k_dist, Ek[1])
 axs[1, 1].set_xticks(k_node)
 axs[1, 1].set_xticklabels(k_label)
-axs[1, 1].set_title("WSM Type II: a=1.0, m=0.5, $t_x=1.0$, t=0.5, $\gamma=0.0$")
+axs[1, 1].set_title("a=1.0, m=0.5, $t_x=1.0$, t=0.5, $\gamma=0.0$")
 
 for ax in axs.flat:
     

@@ -67,7 +67,7 @@
 # In[1]:
 
 
-get_ipython().run_line_magic('pylab', 'inline')
+from pylab import *
 import multiprocessing as mp
 
 mpl.rcParams.update({'font.size': 22, 'text.usetex': True})
@@ -124,12 +124,6 @@ def HWeyl(k_x,k_y,k_z):
     HW = array([[tp*(cos(k_z*a)-m),              tl*sin(k_x*a)-1J*tl*sin(k_y*a)],
                 [tl*sin(k_x*a)+1J*tl*sin(k_y*a),            -tp*(cos(k_z*a)-m)]])
     return HW
-
-
-# In[ ]:
-
-
-
 
 
 # In[4]:

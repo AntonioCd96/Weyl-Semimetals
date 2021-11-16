@@ -59,18 +59,18 @@
 #  
 # * $m$: es la masa
 
-# In[1]:
+# In[8]:
 
 
 import glob
 from matplotlib.ticker import (MultipleLocator,
                                FormatStrFormatter,
                                AutoMinorLocator)
-get_ipython().run_line_magic('pylab', 'inline')
+from pylab import *
 from pythtb import *
 
 
-# In[2]:
+# In[9]:
 
 
 mpl.rcParams.update({'font.size': 22, 'text.usetex': True})
@@ -86,7 +86,7 @@ mpl.rcParams.update({'ytick.major.width':1.5})
 mpl.rcParams.update({'ytick.minor.width':1.0})
 
 
-# In[3]:
+# In[10]:
 
 
 
@@ -186,9 +186,13 @@ savefig("WSMKoshinoBulkGap.pdf",bbox_inches="tight")
 # 
 # Para estudiar cómo se comportan las bandas en distintos planos del material, es necesario pensr que nuestro muestra es un sistema cubico infinito, es decir tiene simetria de traslación en la dirección $X, Y,Z$. Ahora, si se desea estudiar al sistema en $X$, se debe cortar en esa dirección, es decir, se debe romper la simetria de traslación en $X$, pero amnteniendola en $Y$ y en $Z$. Esto mismo aplica cuandos e quieres estudiar en $Y$ y $Z$, se deben romper las simetrías respectivas.
 
-# <img src="WSM_finite_systems-1.png" width="1000" >
+# ```{note}
+# Representación de la ruptura de simetría de traslación
+# {glue:figure}`WSM_finite_systems-1.png`
+# ```
+# 
 
-# In[5]:
+# In[11]:
 
 
 NY_WSM=PWSM.cut_piece(100,1,glue_edgs=False) 
@@ -196,12 +200,12 @@ NX_WSM=PWSM.cut_piece(100,0,glue_edgs=False)
 NZ_WSM=PWSM.cut_piece(100,2,glue_edgs=False)
 
 
-# In[11]:
+# In[12]:
 
 
 
 k=[[0,0.0],[0.0,0.25],[0,.5]]                                
-k_label1=[r"$-Z$",r"$\Gamma$",r"$Z$"]
+k_label1=[r"$-Z$",r"$\Gamma$",r"$Z$"hide-input]
 (k_vec,k_dist,k_node)=NX_WSM.k_path(k,101, report=False)
 EkfinX=NX_WSM.solve_all(k_vec)
 k=[[0,0.0],[0.25,0],[.5,0]]  
@@ -213,7 +217,7 @@ k_label3=[r"$-Y$",r"$\Gamma$",r"$Y$"]
 EkfinZ=NZ_WSM.solve_all(k_vec)
 
 
-# In[12]:
+# In[13]:
 
 
 fig,ax  = plt.subplots(ncols=3,nrows=1,figsize=(20,6),
