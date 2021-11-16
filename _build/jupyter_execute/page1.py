@@ -2,16 +2,16 @@
 # coding: utf-8
 
 # 
-# # <center> Hamiltoniano para semimetales de Weyl tipo I </center>
+# # <center> Hamiltoniano para semimetales de Weyl tipo I -- Grushin </center>
 
 # 
 # 
 # En el presente informe se presentan los resultados de la caraterización teorica de los semimetales de Weyl (WSM, 
-# por sus siglas en inglés) Los electrones en dichos semimetales se describen de forma efectiva por la ecuación de Weyl y, en consecuencia, tienen una relación de dispersión lineal característica de las partículas relativistas sin masa. Los WSM se caracterizan por tener un gap que se cierra en una serie de puntos protegidos por las simetrías del cristal, llamados nodos de Weyl. Dependiendo si el sistema rompe o no la simetría de Lorentz, los WSM pueden ser de tipo I, tipo II y en recientes descubrimientos se reportan los tipo III; sin embargo, los de mayor atención en este trabajo serán los primeros dos, por ser los más estudiados tanto teórica como experimentalmente, lo cual, eventualmente, permitirá comparar los resultados obtenidos. Una particularidad más de los WSM que permitirá ampliar su estudio es la cuasipartícula que lo caracteriza, el fermión de Weyl. Cuando dichos fermiones experimentan variaciones del espacio-tiempo obedecen leyes simples que pueden expresarse en términos de pseudocampos electromagnéticos, y es probable que la aparición de este fenómeno modifique la estructura de bandas, la densidad de estados y con ello la conductividad del material, por lo que en este trabajo se realizará la descripción teórica de los WSM cuando son perturbados periódicamente de manera mecánica.
+# por sus siglas en inglés). Los electrones en dichos semimetales se describen de forma efectiva por la ecuación de Weyl y, en consecuencia, tienen una relación de dispersión lineal característica de las partículas relativistas sin masa. Los WSM se caracterizan por tener un gap que se cierra en una serie de puntos protegidos por las simetrías del cristal, llamados nodos de Weyl. Dependiendo si el sistema rompe o no la simetría de Lorentz, los WSM pueden ser de tipo I, tipo II y en recientes descubrimientos se reportan los tipo III; sin embargo, los de mayor atención en este trabajo serán los primeros dos, por ser los más estudiados tanto teórica como experimentalmente, lo cual, eventualmente, permitirá comparar los resultados obtenidos. Una particularidad más de los WSM que permitirá ampliar su estudio es la cuasipartícula que lo caracteriza, el fermión de Weyl. Cuando dichos fermiones experimentan variaciones del espacio-tiempo obedecen leyes simples que pueden expresarse en términos de pseudocampos electromagnéticos, y es probable que la aparición de este fenómeno modifique la estructura de bandas, la densidad de estados y con ello la conductividad del material, por lo que en este trabajo se realizará la descripción teórica de los WSM cuando son perturbados periódicamente de manera mecánica.
 # 
 # 
 
-# 
+# :::{note}
 # El **objetivo general** de este notebook es explorar el Hamiltoniano presentado en el Review[1] 
 # 
 # Los conceptos a introducir serán:
@@ -20,13 +20,14 @@
 # 
 # ---
 # <sup>Fuente: R. Ilan, A. G. Grushin, and D. I. Pikulin, Pseudo-electromagnetic fields in 3d topological semimetals,Nature Reviews Physics2, 29 (2020).</sup>
+# :::
 # 
 
 # # <center>Hamiltoniano del sistema </center>
 # 
 # 
 # <center>
-# $
+# 
 # \begin{eqnarray}
 # H(k) = \left[
 # \begin{array}{cc}
@@ -35,13 +36,13 @@
 # \end{array}
 # \right]
 # \end{eqnarray}
-# $</center>
+# </center>
 
 # ---
 # 
 # #### Expresión de la forma exponencial
 # <center>
-# $
+# 
 # \begin{eqnarray}
 # H(k) = \left[
 # \begin{array}{cc}
@@ -50,7 +51,7 @@
 # \end{array}
 # \right]
 # \end{eqnarray}
-# $</center>
+# </center>
 # 
 
 # 
@@ -204,8 +205,4 @@ fig.update_layout( autosize=False,
 fig.show()
 
 
-# In[ ]:
-
-
-
-
+# En esta figura se presenta una realcion de dispersion propia de un semimetal de Weyl tipo I. Dicha relacion se caracteriza porque la banda de conducción y valencia son simetricas al plano $K_x, K_y$
