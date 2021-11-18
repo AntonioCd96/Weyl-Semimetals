@@ -292,8 +292,8 @@ Phys. Rev. B 93, 045201 – Published 4 January 2016; Erratum Phys. Rev. B 99, 2
 <div class="tex2jax_ignore mathjax_ignore section" id="center-hamiltoniano-del-sistema-center">
 <h1><center> Hamiltoniano del sistema</center><a class="headerlink" href="#center-hamiltoniano-del-sistema-center" title="Permalink to this headline">¶</a></h1>
 <center> 
-<div class="amsmath math notranslate nohighlight" id="equation-3a4989a1-fd17-4fb6-b08c-78b607dde3e2">
-<span class="eqno">(4)<a class="headerlink" href="#equation-3a4989a1-fd17-4fb6-b08c-78b607dde3e2" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c6034686-b564-4044-936b-ad1a12507139">
+<span class="eqno">(4)<a class="headerlink" href="#equation-c6034686-b564-4044-936b-ad1a12507139" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 H(p) = \left[
 \begin{array}{cc}
  m\sigma_0 + b\sigma_z &amp; v\sigma \cdot p\\
@@ -301,11 +301,14 @@ v\sigma \cdot p &amp;  -m\sigma_0 + b\sigma_z
 \end{array}
 \right]
 \end{eqnarray}\]</div>
+<p>Para poder computar los cálculos en la librería de PythTB[2] es necesario expresar a los momentos <span class="math notranslate nohighlight">\(p_i=\sin(k_i)\)</span> y consecuentemente, se puede expresar al <span class="math notranslate nohighlight">\(\sin\)</span> en su forma exponencial.</p>
+<hr class="docutils" />
+<p><sup>Fuente:S. Coh and D. Vanderbilt, Python Tight Binding (PythTB) — PythTB 1.7.2 documentation (2016)</sup></p>
 <hr class="docutils" />
 <div class="section" id="center-expresion-de-la-forma-exponencial">
 <h2><center>  Expresión de la forma exponencial<a class="headerlink" href="#center-expresion-de-la-forma-exponencial" title="Permalink to this headline">¶</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-ee4fa97a-2905-48a2-b720-8748c60d977b">
-<span class="eqno">(5)<a class="headerlink" href="#equation-ee4fa97a-2905-48a2-b720-8748c60d977b" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-a00ad3c1-146a-499b-aefa-a6ef7c8a3d39">
+<span class="eqno">(5)<a class="headerlink" href="#equation-a00ad3c1-146a-499b-aefa-a6ef7c8a3d39" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 H(k) = \left[
 \begin{array}{cc}
  m+b &amp; 0 &amp;v\hbar (\frac{e^{ik_za}-e^{-ik_za}}{2i}) &amp; v\hbar (\frac{e^{ik_xa}-e^{-ik_xa}}{2i})- i\hbar v (\frac{e^{ik_ya}-e^{-ik_ya}}{2i}) \\
@@ -442,7 +445,7 @@ v\hbar (\frac{e^{ik_za}-e^{-ik_za}}{2i}) &amp; v\hbar (\frac{e^{ik_xa}-e^{-ik_xa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/page4_7_0.png" src="_images/page4_7_0.png" />
+<img alt="_images/page4_8_0.png" src="_images/page4_8_0.png" />
 </div>
 </div>
 <p>En este Hamiltoniano se observa una relacion de dispersion propia d eun semimetal de Weyl tipo I. Adicionalmente, se observa una brecha energetica alrededor de <span class="math notranslate nohighlight">\(E[t]=0\)</span></p>
@@ -451,11 +454,7 @@ v\hbar (\frac{e^{ik_za}-e^{-ik_za}}{2i}) &amp; v\hbar (\frac{e^{ik_xa}-e^{-ik_xa
 <div class="section" id="exploracion-de-las-bandas-de-semimetal-de-weyl">
 <h2>Exploración de las bandas de semimetal de Weyl<a class="headerlink" href="#exploracion-de-las-bandas-de-semimetal-de-weyl" title="Permalink to this headline">¶</a></h2>
 <p>Para estudiar cómo se comportan las bandas en distintos planos del material, es necesario pensr que nuestro muestra es un sistema cubico infinito, es decir tiene simetria de traslación en la dirección <span class="math notranslate nohighlight">\(X, Y,Z\)</span>. Ahora, si se desea estudiar al sistema en <span class="math notranslate nohighlight">\(X\)</span>, se debe cortar en esa dirección, es decir, se debe romper la simetria de traslación en <span class="math notranslate nohighlight">\(X\)</span>, pero amnteniendola en <span class="math notranslate nohighlight">\(Y\)</span> y en <span class="math notranslate nohighlight">\(Z\)</span>. Esto mismo aplica cuandos e quieres estudiar en <span class="math notranslate nohighlight">\(Y\)</span> y <span class="math notranslate nohighlight">\(Z\)</span>, se deben romper las simetrías respectivas.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Representación de la ruptura de simetría de traslación
-<a href="#id1"><span class="problematic" id="id2">:glue:figure:`WSM_finite_systems-1.png`</span></a></p>
-</div>
+<p><img alt="Sistemas finitos en una dirección" src="_images/WSM_finite_systems-1.png" /></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NY_WSM</span><span class="o">=</span><span class="n">PWSM</span><span class="o">.</span><span class="n">cut_piece</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">glue_edgs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -515,7 +514,7 @@ v\hbar (\frac{e^{ik_za}-e^{-ik_za}}{2i}) &amp; v\hbar (\frac{e^{ik_xa}-e^{-ik_xa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/page4_14_0.png" src="_images/page4_14_0.png" />
+<img alt="_images/page4_15_0.png" src="_images/page4_15_0.png" />
 </div>
 </div>
 <p>Se denota que los conos de Dirac sólo aparecen cuando el sistema es finito en la dirección <span class="math notranslate nohighlight">\(X\)</span> y con un recorrido en <span class="math notranslate nohighlight">\(Z\)</span>. Sin embargo, no hay estados de superficie.</p>
