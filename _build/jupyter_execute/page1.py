@@ -200,3 +200,5 @@ fig.show()
 
 
 # En esta figura se presenta una realcion de dispersion propia de un semimetal de Weyl tipo I. Dicha relacion se caracteriza porque la banda de conducción y valencia son simetricas al plano $K_x, K_y$
+
+# ![Semimetal de Weyl Tipo I](WSM_Grushin.png)

@@ -138,3 +138,11 @@ fig.show()
 
 
 # En esta figura se presenta una realcion de dispersion propia de un semimetal de Weyl tipo II. Dicha relación se caracteriza porque la banda de conducción y valencia NO son simetricas al plano $K_x, K_y$. Es decir, se observa que los conos (conos de Dirac) se encuentran inclinados respecto al eje $E[t]$
+
+# ![Semimetal de Weyl Tipo II](WSM_MM_2.png)
+
+# In[ ]:
+
+
+
+

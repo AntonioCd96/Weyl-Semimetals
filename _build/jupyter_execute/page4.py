@@ -31,6 +31,12 @@
 # 
 # 
 
+# Para poder computar los cálculos en la librería de PythTB[2] es necesario expresar a los momentos $p_i=\sin(k_i)$ y consecuentemente, se puede expresar al $\sin$ en su forma exponencial.
+# 
+# ---
+# <sup>Fuente:S. Coh and D. Vanderbilt, Python Tight Binding (PythTB) — PythTB 1.7.2 documentation (2016)</sup>
+# 
+
 # ---
 # 
 # #### <center>  Expresión de la forma exponencial 
@@ -186,11 +192,7 @@ savefig("WSMKoshinoBulkGap.pdf",bbox_inches="tight")
 # 
 # Para estudiar cómo se comportan las bandas en distintos planos del material, es necesario pensr que nuestro muestra es un sistema cubico infinito, es decir tiene simetria de traslación en la dirección $X, Y,Z$. Ahora, si se desea estudiar al sistema en $X$, se debe cortar en esa dirección, es decir, se debe romper la simetria de traslación en $X$, pero amnteniendola en $Y$ y en $Z$. Esto mismo aplica cuandos e quieres estudiar en $Y$ y $Z$, se deben romper las simetrías respectivas.
 
-# ```{note}
-# Representación de la ruptura de simetría de traslación
-# {glue:figure}`WSM_finite_systems-1.png`
-# ```
-# 
+# ![Sistemas finitos en una dirección](WSM_finite_systems-1.png)
 
 # In[11]:
 

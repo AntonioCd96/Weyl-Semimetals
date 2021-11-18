@@ -48,7 +48,7 @@ mpl.rcParams.update({'ytick.minor.width':1.0})
 # \end{eqnarray}
 # $
 
-# In[4]:
+# In[2]:
 
 
 #Parámetros
@@ -183,7 +183,7 @@ savefig("Finite_systems_Grushin.pdf",bbox_inches='tight')
 
 # ## Interactivo
 
-# In[14]:
+# In[3]:
 
 
 #Parámetros
@@ -319,11 +319,7 @@ for ax in axs.flat:
 savefig("VarGrushin.pdf",bbox_inches='tight')    
 
 
-# In[ ]:
-
-
-
-
+# En la figura enterior se puede observar los efectos de la variación de cada uno de los parámetros del Hamiltoniano.
 
 # In[ ]:
 

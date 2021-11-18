@@ -29,14 +29,14 @@
 # 
 # 
 
-# In[14]:
+# In[1]:
 
 
 from pythtb import *
 from pylab import *
 
 
-# In[15]:
+# In[2]:
 
 
 import glob
@@ -56,14 +56,14 @@ mpl.rcParams.update({'ytick.major.width':1.5})
 mpl.rcParams.update({'ytick.minor.width':1.0})
 
 
-# In[16]:
+# In[3]:
 
 
 from palettable.cubehelix import Cubehelix
 palette = Cubehelix.make(start=-0.5, rotation=0.3,reverse=True,n=10)
 
 
-# In[17]:
+# In[4]:
 
 
 #Parámetros
@@ -731,6 +731,8 @@ ax[1].set_xlim([-0.9,0.9])
 savefig("DOS-Fin-vs-DOS-Inf.pdf")
 
 
+# Se puede denotar cómo los arcos de Fermi sólo aparecen cuando el sistema tiene bordes, es decir, cuando se rompe la simetría de traslación.
+
 # ## Densidad de estados usando Funciones de Green.
 
 # La función de Green es uan herramienta matematica que nos permite obtener la DOS de un hamiltoniano independiente del tiempo. A diferencia de los histogramas, tiene la ventaja de que genera curvas suaves.
@@ -799,6 +801,8 @@ ax[0].spines['top'].set_visible(False)
 # savefig("Green_fuc_DOS")
 
 
+# Se puede denotar cómo los arcos de Fermi sólo aparecen cuando el sistema tiene bordes, es decir, cuando se rompe la simetría de traslación.
+
 # ### Densidad de esatdos acomplada con la estructura de bandas
 
 # In[50]:
@@ -834,6 +838,8 @@ ax[1].plot(G_inf[0],Et)
 
 savefig("Dispersion-DOS_TII.pdf",bbox_inches="tight")
 
+
+# En la figura anterior se puede notar cómo los arcos de Fermi aparecen en una $E[t]=0$. 
 
 # In[51]:
 
@@ -914,14 +920,14 @@ savefig("IPR_Y_γ={}.pdf".format(γ),bbox_inches="tight")
 
 # ## Interactivo
 
-# In[57]:
+# In[5]:
 
 
 from ipywidgets import interact, interactive, fixed, interact_manual
 import ipywidgets as widgets
 
 
-# In[59]:
+# In[6]:
 
 
 #Parámetros
