@@ -48,7 +48,7 @@ mpl.rcParams.update({'ytick.minor.width':1.0})
 # \end{eqnarray}
 # $
 
-# In[2]:
+# In[4]:
 
 
 #Parámetros
@@ -121,7 +121,7 @@ ax[1].set_xlabel(r"$K_z$",fontsize=26)
 savefig("WSMGrushinBulkGap.pdf",bbox_inches='tight')
 
 
-# In[9]:
+# In[5]:
 
 
 NY_WSM=WSH.cut_piece(100,1,glue_edgs=False) #numero de reps, en la direccion 0x,1y,2z, mi sistema se redujo dimensionalmente
@@ -130,7 +130,7 @@ NX_WSM=WSH.cut_piece(100,0,glue_edgs=False)
 NZ_WSM=WSH.cut_piece(100,2,glue_edgs=False)
 
 
-# In[12]:
+# In[6]:
 
 
 k=[[-0.5,0],[0.0,0],[0.5,0]] # Punto por los cuales que quiero que pase. Son los punto de al simetria
@@ -149,7 +149,7 @@ k_label3=[r"$-Y$",r"$\Gamma$",r"$Y$"]
 EkfinZ=NZ_WSM.solve_all(k_vec)
 
 
-# In[13]:
+# In[7]:
 
 
 fig,ax  = plt.subplots(ncols=3,nrows=1,figsize=(20,6),
@@ -183,7 +183,7 @@ savefig("Finite_systems_Grushin.pdf",bbox_inches='tight')
 
 # ## Interactivo
 
-# In[3]:
+# In[8]:
 
 
 #Parámetros
@@ -233,7 +233,7 @@ def WSHTot(a=0.5,m=0.5,tp=0.5):
 
 # ## Exploración de la variación de parámetros. 
 
-# In[15]:
+# In[9]:
 
 
 
@@ -271,7 +271,7 @@ def WSHTot(a=0.5,m=0.5,tp=0.5):
     
 
 
-# In[16]:
+# In[10]:
 
 
 fig, axs = plt.subplots(2, 2,figsize=(15, 11),
