@@ -21,7 +21,7 @@
 # 
 # 
 
-# In[1]:
+# In[5]:
 
 
 from IPython.display import *
@@ -98,7 +98,7 @@ Video("Rayleigh_scattering_animated.mp4")
 
 # # Euler equation approach
 
-# In[2]:
+# In[24]:
 
 
 import matplotlib.pyplot as plt

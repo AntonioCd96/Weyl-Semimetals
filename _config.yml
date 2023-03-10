@@ -26,7 +26,7 @@ sphinx:
     bibtex_reference_style: author_year
 
 execute:
-  execute_notebooks: "force"
+  execute_notebooks: cache
 
 
 parse:
