@@ -354,8 +354,8 @@
 <hr class="docutils" />
 <div class="tex2jax_ignore mathjax_ignore section" id="hamiltoniano-del-sistema">
 <h1>Hamiltoniano del sistema<a class="headerlink" href="#hamiltoniano-del-sistema" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-1928461c-d4cc-4897-99ec-a58b563f9d6a">
-<span class="eqno">(8)<a class="headerlink" href="#equation-1928461c-d4cc-4897-99ec-a58b563f9d6a" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-9154b3a2-6b5f-4ea7-8c3a-a052554c9e71">
+<span class="eqno">(8)<a class="headerlink" href="#equation-9154b3a2-6b5f-4ea7-8c3a-a052554c9e71" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 H(k) = \left[
 \begin{array}{cc}
 \frac{\gamma }{2}(e^{ik_xa}+e^{-ik_xa}-e^{ik_0a}-e^{-ik_0a})-\frac{t}{i}(e^{ik_za}-e^{-ik_za}) &amp; 
@@ -369,6 +369,17 @@ H(k) = \left[
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">palettable.cubehelix</span> <span class="kn">import</span> <span class="n">Cubehelix</span>
 <span class="n">palette</span> <span class="o">=</span> <span class="n">Cubehelix</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4208</span><span class="o">/</span><span class="mf">4023577175.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">palettable.cubehelix</span> <span class="kn">import</span> <span class="n">Cubehelix</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">Cubehelix</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;palettable&#39;
 </pre></div>
 </div>
 </div>
@@ -430,8 +441,8 @@ H(k) = \left[
 <div class="tex2jax_ignore mathjax_ignore section" id="introduccion-del-strain-en-el-hamiltoniano">
 <h1>Introducción del Strain en el Hamiltoniano<a class="headerlink" href="#introduccion-del-strain-en-el-hamiltoniano" title="Permalink to this headline">¶</a></h1>
 <p>Los hopping los modificaremos de la siguiente forma.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32c9f360-4d1a-4309-b834-00345929875a">
-<span class="eqno">(9)<a class="headerlink" href="#equation-32c9f360-4d1a-4309-b834-00345929875a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-21a8ddb3-61f8-4634-bc28-c8a01a71d015">
+<span class="eqno">(9)<a class="headerlink" href="#equation-21a8ddb3-61f8-4634-bc28-c8a01a71d015" title="Permalink to this equation">¶</a></span>\[\begin{align}
 t_{ij} = t^0_{ij}e^{\beta(1-r_{ij}/a_{\text{nn}})}
 \end{align}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(a_{\text{nn}}\)</span> es la distancia de equilibrio.</p>
