@@ -59,7 +59,7 @@ mpl.rcParams.update({'ytick.minor.width':1.0})
 # 
 # 
 
-# In[5]:
+# In[3]:
 
 
 from palettable.cubehelix import Cubehelix

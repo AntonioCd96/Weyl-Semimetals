@@ -65,7 +65,7 @@
 #  
 # * $m$: es la masa
 
-# In[8]:
+# In[1]:
 
 
 import glob
@@ -76,7 +76,7 @@ from pylab import *
 from pythtb import *
 
 
-# In[9]:
+# In[2]:
 
 
 mpl.rcParams.update({'font.size': 22, 'text.usetex': True})
@@ -92,7 +92,7 @@ mpl.rcParams.update({'ytick.major.width':1.5})
 mpl.rcParams.update({'ytick.minor.width':1.0})
 
 
-# In[10]:
+# In[3]:
 
 
 

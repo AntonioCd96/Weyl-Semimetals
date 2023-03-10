@@ -48,7 +48,7 @@ mpl.rcParams.update({'ytick.minor.width':1.0})
 # \end{eqnarray}
 # $
 
-# In[2]:
+# In[4]:
 
 
 #Parámetros
