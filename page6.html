@@ -1,349 +1,422 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamiltoniano del sistema – Minimal Models &#8212; Semimetales de Weyl</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'page6';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Semimetal de Weyl deformado" href="page7.html" />
     <link rel="prev" title="Hamiltoniano del sistema" href="page5.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="inicio.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/FQ-bw.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Semimetales de Weyl</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="inicio.html">
-   Bienvenido
-  </a>
- </li>
+    
+    
+    <img src="_static/FQ-bw.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/FQ-bw.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="page1.html"><center> Hamiltoniano para semimetales de Weyl tipo I – Grushin </center></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="page2.html"><center> Hamiltoniano para semimetales de Weyl Type II–Minimal Models </center></a></li>
+<li class="toctree-l1"><a class="reference internal" href="page3.html"><center> Hamiltoniano para semimetales de Weyl tipo I –Minimal Models </center></a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4.html"><center> Hamiltoniano para semimetales de Weyl tipo I - Koshino </center></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="page5.html"><center> Hamiltoniano del sistema </center></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><center> Hamiltoniano del sistema – Minimal Models </center></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="page7.html">Semimetal de Weyl deformado</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page8.html">Vibrational spectroscopy</a></li>
+
+
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="page1.html">
-   <center>
-    Hamiltoniano para semimetales de Weyl tipo I – Grushin
-   </center>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="page2.html">
-   <center>
-    Hamiltoniano para semimetales de Weyl Type II–Minimal Models
-   </center>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="page3.html">
-   <center>
-    Hamiltoniano para semimetales de Weyl tipo I –Minimal Models
-   </center>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="page4.html">
-   <center>
-    Hamiltoniano para semimetales de Weyl tipo I - Koshino
-   </center>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="page5.html">
-   <center>
-    Hamiltoniano del sistema
-   </center>
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   <center>
-    Hamiltoniano del sistema – Minimal Models
-   </center>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="page7.html">
-   Semimetal de Weyl deformado
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="page8.html">
-   Vibrational spectroscopy
-  </a>
- </li>
-</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/page6.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+<div class="sbt-scroll-pixel-helper"></div>
 
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/page6.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/page6.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/page6.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/page6.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/page6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><center> Hamiltoniano del sistema – Minimal Models </center></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   <center>
-    Hamiltoniano del sistema – Minimal Models
-   </center>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-distintos-planos-del-material">
-     Exploración de la estructura de bandas en distintos planos del material
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-x">
-     Exploración de la estructura de bandas en el material finito en X
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-y">
-     Exploración de la estructura de bandas en el material finito en Y
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-z">
-     Exploración de la estructura de bandas en el material finito en Z
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#density-of-states-fo-wsm-ti-histogram">
-     Density of States fo WSM-TI- Histogram
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#for-a-infinite-system">
-       For a infinite system
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#for-a-finite-system">
-       For a finite system
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comparing-dos-for-a-finite-system-vs-a-infinite-system">
-       Comparing DOS for a finite system vs a infinite system
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#densidad-de-estados-usando-funciones-de-green">
-     Densidad de estados usando Funciones de Green.
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#densidad-de-esatdos-acomplada-con-la-estructura-de-bandas">
-       Densidad de esatdos acomplada con la estructura de bandas
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ipr">
-   IPR
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interactivo">
-     Interactivo
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subplots">
-     Subplots
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center> Hamiltoniano del sistema – Minimal Models </center></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-distintos-planos-del-material">Exploración de la estructura de bandas en distintos planos del material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-x">Exploración de la estructura de bandas en el material finito en X</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-y">Exploración de la estructura de bandas en el material finito en Y</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-z">Exploración de la estructura de bandas en el material finito en Z</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-of-states-fo-wsm-ti-histogram">Density of States fo WSM-TI- Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-a-infinite-system">For a infinite system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-a-finite-system">For a finite system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-dos-for-a-finite-system-vs-a-infinite-system">Comparing DOS for a finite system vs a infinite system</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-de-estados-usando-funciones-de-green">Densidad de estados usando Funciones de Green.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-de-esatdos-acomplada-con-la-estructura-de-bandas">Densidad de esatdos acomplada con la estructura de bandas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ipr">IPR</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivo">Interactivo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots">Subplots</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <hr class="docutils" />
 <div class="tex2jax_ignore mathjax_ignore section" id="center-hamiltoniano-del-sistema-minimal-models-center">
-<h1><center> Hamiltoniano del sistema – Minimal Models </center><a class="headerlink" href="#center-hamiltoniano-del-sistema-minimal-models-center" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-898ed7a1-7d7c-4fcb-8a12-6431386565df">
-<span class="eqno">(7)<a class="headerlink" href="#equation-898ed7a1-7d7c-4fcb-8a12-6431386565df" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<h1><center> Hamiltoniano del sistema – Minimal Models </center><a class="headerlink" href="#center-hamiltoniano-del-sistema-minimal-models-center" title="Permalink to this heading">#</a></h1>
+<div class="amsmath math notranslate nohighlight" id="equation-3c82b214-f73f-4a5a-b0df-49f7c5237e88">
+<span class="eqno">(7)<a class="headerlink" href="#equation-3c82b214-f73f-4a5a-b0df-49f7c5237e88" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 H(k) = \left[
 \begin{array}{cc}
 \frac{\gamma }{2}(e^{ik_xa}+e^{-ik_xa}-e^{ik_0a}-e^{-ik_0a})-\frac{t}{i}(e^{ik_za}-e^{-ik_za}) &amp; 
@@ -362,14 +435,25 @@ H(k) = \left[
 \right]
 \end{eqnarray*}\]</div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythtb</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="p">(</span><span class="n">MultipleLocator</span><span class="p">,</span>
@@ -389,16 +473,39 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">palettable.cubehelix</span> <span class="kn">import</span> <span class="n">Cubehelix</span>
 <span class="n">palette</span> <span class="o">=</span> <span class="n">Cubehelix</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_274</span><span class="o">/</span><span class="mf">4023577175.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">palettable.cubehelix</span> <span class="kn">import</span> <span class="n">Cubehelix</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">Cubehelix</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;palettable&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Parámetros</span>
 <span class="n">a</span>  <span class="o">=</span> <span class="mf">1.0</span>
@@ -498,11 +605,17 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_5_0.png" src="_images/page6_5_0.png" />
+<img alt="_images/bbb23810e51d177549a487a26d2af1c10f06d1e1a65ff06006e2e066e673cc64.png" src="_images/bbb23810e51d177549a487a26d2af1c10f06d1e1a65ff06006e2e066e673cc64.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span> <span class="mi">100</span>
 <span class="n">NY_WSM</span><span class="o">=</span><span class="n">WSH</span><span class="o">.</span><span class="n">cut_piece</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">glue_edgs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -511,10 +624,16 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="section" id="exploracion-de-la-estructura-de-bandas-en-distintos-planos-del-material">
-<h2>Exploración de la estructura de bandas en distintos planos del material<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-distintos-planos-del-material" title="Permalink to this headline">¶</a></h2>
+<h2>Exploración de la estructura de bandas en distintos planos del material<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-distintos-planos-del-material" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
 <span class="n">k_label1</span><span class="o">=</span><span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\Gamma$&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$Y$&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$\Gamma$&quot;</span><span class="p">]</span>
@@ -533,8 +652,14 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]})</span>
@@ -566,15 +691,21 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_9_0.png" src="_images/page6_9_0.png" />
+<img alt="_images/7cb0c40cc216214592ac44fc6731306b06f4fc6f693e3a41bd59c9887116c0ec.png" src="_images/7cb0c40cc216214592ac44fc6731306b06f4fc6f693e3a41bd59c9887116c0ec.png" />
 </div>
 </div>
 <p>A diferencia de los hamiltonianos anteriores, en la estructura de bandas de este se pude observar una line aque une a los dos nodos de Weyl. Dicha línea recibe el nombre de Arco de Fermi.</p>
 </div>
 <div class="section" id="exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-x">
-<h2>Exploración de la estructura de bandas en el material finito en X<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-x" title="Permalink to this headline">¶</a></h2>
+<h2>Exploración de la estructura de bandas en el material finito en X<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-x" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###-------Finito en X-------#     </span>
 <span class="n">z</span><span class="o">=</span><span class="mi">0</span>
@@ -609,8 +740,14 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]})</span>
@@ -640,15 +777,21 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Finite system in $X|_{k_x=0.5}$&#39;)
 </pre></div>
 </div>
-<img alt="_images/page6_13_1.png" src="_images/page6_13_1.png" />
+<img alt="_images/de0cd9a8a8f2678bac983f69849d4391485938fdea4404027874734889907f5f.png" src="_images/de0cd9a8a8f2678bac983f69849d4391485938fdea4404027874734889907f5f.png" />
 </div>
 </div>
 <p>Como se puede denotar en la figura anterior, la variación de <span class="math notranslate nohighlight">\(k_z\)</span> sila como evolucuiona la relacion de dispersion a lo alrgo de la primera mitad de la zona de Brillouin.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
@@ -691,14 +834,20 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_15_0.png" src="_images/page6_15_0.png" />
+<img alt="_images/e46c96eefe89e861f817649f27934e79edbbe7c6c49a480b9c0eb8a74ff09c43.png" src="_images/e46c96eefe89e861f817649f27934e79edbbe7c6c49a480b9c0eb8a74ff09c43.png" />
 </div>
 </div>
 </div>
 <div class="section" id="exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-y">
-<h2>Exploración de la estructura de bandas en el material finito en Y<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-y" title="Permalink to this headline">¶</a></h2>
+<h2>Exploración de la estructura de bandas en el material finito en Y<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-y" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###-------Finito en Y-------#     </span>
 <span class="n">z</span><span class="o">=</span><span class="mf">0.</span>
@@ -733,8 +882,14 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]})</span>
@@ -765,12 +920,18 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_18_0.png" src="_images/page6_18_0.png" />
+<img alt="_images/87e70555dbebb2aac1191c1ba61f7d1ceaaf6cef26211d3f8dc1e6c27cf274ea.png" src="_images/87e70555dbebb2aac1191c1ba61f7d1ceaaf6cef26211d3f8dc1e6c27cf274ea.png" />
 </div>
 </div>
 <p>Se denota cómo los arcos de Fermi van evolucionando conforme se avanza en la zona de Brillouin. Si este avabce se hiciera continuo se formarian dos planos interceptados extactamente en el arco de Fermi. Dichos planos corresponderian a la superficie de Fermi.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###-------Finito en Y-------#     </span>
 <span class="n">z</span><span class="o">=</span><span class="mf">0.</span>
@@ -805,8 +966,14 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
@@ -846,6 +1013,7 @@ H(k) = \left[
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <script type="application/javascript">/* Put everything inside the global mpl namespace */
 /* global mpl */
@@ -1824,8 +1992,13 @@ if (IPython.notebook.kernel !== null) {
 <p>Como se puede denotar en la figura anterior, la variación de <span class="math notranslate nohighlight">\(k_z\)</span> sila como evolucuiona la relacion de dispersion a lo alrgo de la primera mitad de la zona de Brillouin.</p>
 </div>
 <div class="section" id="exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-z">
-<h2>Exploración de la estructura de bandas en el material finito en Z<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-z" title="Permalink to this headline">¶</a></h2>
+<h2>Exploración de la estructura de bandas en el material finito en Z<a class="headerlink" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-z" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">k</span><span class="o">=</span><span class="p">[[</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">z</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="n">z</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]]</span>
@@ -1859,8 +2032,14 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]})</span>
@@ -1890,14 +2069,20 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Finite system in $Z|_{k_x=0.5}$&#39;)
 </pre></div>
 </div>
-<img alt="_images/page6_25_1.png" src="_images/page6_25_1.png" />
+<img alt="_images/46fdfa2dd64dc351ffe3755326254561a154c50c8ee7aaf6ac14da3d9456f9db.png" src="_images/46fdfa2dd64dc351ffe3755326254561a154c50c8ee7aaf6ac14da3d9456f9db.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">k</span><span class="o">=</span><span class="p">[[</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">z</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="n">z</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]]</span>
@@ -1931,8 +2116,14 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
@@ -1972,17 +2163,23 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_27_0.png" src="_images/page6_27_0.png" />
+<img alt="_images/7c8041071074381413dc44dcfd0de790b69185724155bd8abdfdce821e0d451f.png" src="_images/7c8041071074381413dc44dcfd0de790b69185724155bd8abdfdce821e0d451f.png" />
 </div>
 </div>
 </div>
 <div class="section" id="density-of-states-fo-wsm-ti-histogram">
-<h2>Density of States fo WSM-TI- Histogram<a class="headerlink" href="#density-of-states-fo-wsm-ti-histogram" title="Permalink to this headline">¶</a></h2>
+<h2>Density of States fo WSM-TI- Histogram<a class="headerlink" href="#density-of-states-fo-wsm-ti-histogram" title="Permalink to this heading">#</a></h2>
 <p>Una herramienta util para explorar las propiedadfes electroncias de un material es la densidad de estados (DOS). Dicha heramienta nos permitira elucidar la cantidad de estados que hay en los arcos de Fermi en proporción con los que hay en el bulto del material.</p>
 <div class="section" id="for-a-infinite-system">
-<h3>For a infinite system<a class="headerlink" href="#for-a-infinite-system" title="Permalink to this headline">¶</a></h3>
+<h3>For a infinite system<a class="headerlink" href="#for-a-infinite-system" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate density of states</span>
 <span class="c1"># first solve the model on a mesh and return all energies</span>
@@ -1998,11 +2195,17 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </div>
 <div class="section" id="for-a-finite-system">
-<h3>For a finite system<a class="headerlink" href="#for-a-finite-system" title="Permalink to this headline">¶</a></h3>
+<h3>For a finite system<a class="headerlink" href="#for-a-finite-system" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span>     <span class="o">=</span> <span class="mi">100</span> <span class="c1">#Numero de celdas</span>
 <span class="n">N_WSM</span> <span class="o">=</span> <span class="n">WSH</span><span class="o">.</span><span class="n">cut_piece</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">glue_edgs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1">#numero de reps, en la direccion 0x,1y,2z, mi sistema se redujo dimensionalmente</span>
@@ -2010,8 +2213,14 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate density of states</span>
 <span class="c1"># first solve the model on a mesh and return all energies</span>
@@ -2027,11 +2236,17 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </div>
 <div class="section" id="comparing-dos-for-a-finite-system-vs-a-infinite-system">
-<h3>Comparing DOS for a finite system vs a infinite system<a class="headerlink" href="#comparing-dos-for-a-finite-system-vs-a-infinite-system" title="Permalink to this headline">¶</a></h3>
+<h3>Comparing DOS for a finite system vs a infinite system<a class="headerlink" href="#comparing-dos-for-a-finite-system-vs-a-infinite-system" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting DOS</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plotting DOS...&#39;</span><span class="p">)</span>
@@ -2056,16 +2271,22 @@ if (IPython.notebook.kernel !== null) {
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting DOS...
 CPU times: user 2 µs, sys: 0 ns, total: 2 µs
 Wall time: 4.53 µs
 </pre></div>
 </div>
-<img alt="_images/page6_35_1.png" src="_images/page6_35_1.png" />
+<img alt="_images/5b0ec132309d308a37c0e652049530d327a7bccda7263b904abd1ee4c2ff6852.png" src="_images/5b0ec132309d308a37c0e652049530d327a7bccda7263b904abd1ee4c2ff6852.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
@@ -2090,17 +2311,23 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_36_0.png" src="_images/page6_36_0.png" />
+<img alt="_images/2b6aee901869e4851ddfca4e4d33b388bfb5c9d645779a6a19dddf9312508173.png" src="_images/2b6aee901869e4851ddfca4e4d33b388bfb5c9d645779a6a19dddf9312508173.png" />
 </div>
 </div>
 <p>Se puede denotar cómo los arcos de Fermi sólo aparecen cuando el sistema tiene bordes, es decir, cuando se rompe la simetría de traslación.</p>
 </div>
 </div>
 <div class="section" id="densidad-de-estados-usando-funciones-de-green">
-<h2>Densidad de estados usando Funciones de Green.<a class="headerlink" href="#densidad-de-estados-usando-funciones-de-green" title="Permalink to this headline">¶</a></h2>
+<h2>Densidad de estados usando Funciones de Green.<a class="headerlink" href="#densidad-de-estados-usando-funciones-de-green" title="Permalink to this heading">#</a></h2>
 <p>La función de Green es uan herramienta matematica que nos permite obtener la DOS de un hamiltoniano independiente del tiempo. A diferencia de los histogramas, tiene la ventaja de que genera curvas suaves.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Et</span><span class="o">=</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">G</span><span class="p">(</span><span class="n">Edos</span><span class="p">):</span>
@@ -2124,15 +2351,27 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_f</span><span class="p">,</span><span class="n">G_inf</span><span class="o">=</span><span class="n">G</span><span class="p">(</span><span class="n">Edos</span><span class="p">),</span><span class="n">G</span><span class="p">(</span><span class="n">Ekf</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting DOS</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plotting DOS...&#39;</span><span class="p">)</span>
@@ -2165,19 +2404,25 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting DOS...
 CPU times: user 2 µs, sys: 0 ns, total: 2 µs
 Wall time: 4.53 µs
 </pre></div>
 </div>
-<img alt="_images/page6_42_1.png" src="_images/page6_42_1.png" />
+<img alt="_images/f8a05bbe84e8b10f3dfb610935dd2622a72d4c0323dd1adca85aa71249ea35f3.png" src="_images/f8a05bbe84e8b10f3dfb610935dd2622a72d4c0323dd1adca85aa71249ea35f3.png" />
 </div>
 </div>
 <p>Se puede denotar cómo los arcos de Fermi sólo aparecen cuando el sistema tiene bordes, es decir, cuando se rompe la simetría de traslación.</p>
 <div class="section" id="densidad-de-esatdos-acomplada-con-la-estructura-de-bandas">
-<h3>Densidad de esatdos acomplada con la estructura de bandas<a class="headerlink" href="#densidad-de-esatdos-acomplada-con-la-estructura-de-bandas" title="Permalink to this headline">¶</a></h3>
+<h3>Densidad de esatdos acomplada con la estructura de bandas<a class="headerlink" href="#densidad-de-esatdos-acomplada-con-la-estructura-de-bandas" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">14.0</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]})</span>
@@ -2211,17 +2456,24 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_45_0.png" src="_images/page6_45_0.png" />
+<img alt="_images/f4b47d49964a7a63ecb9446219705a2e20d8939c5c0bf33ab6ec1b95875fef99.png" src="_images/f4b47d49964a7a63ecb9446219705a2e20d8939c5c0bf33ab6ec1b95875fef99.png" />
 </div>
 </div>
 <p>En la figura anterior se puede notar cómo los arcos de Fermi aparecen en una <span class="math notranslate nohighlight">\(E[t]=0\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trapz</span><span class="p">(</span><span class="n">G_f</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Et</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9991432821048173
 </pre></div>
@@ -2233,9 +2485,14 @@ Wall time: 4.53 µs
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="ipr">
-<h1>IPR<a class="headerlink" href="#ipr" title="Permalink to this headline">¶</a></h1>
+<h1>IPR<a class="headerlink" href="#ipr" title="Permalink to this heading">#</a></h1>
 <p>El IPR o Inverse Participation Ratio (IPR, por sus siglas en inglés) es una cantidad que perimte saber qué tan lo laizados están los estados electronicos en un material. En esta sección se presenta un grafico coloreado con el Log|IPR|, de manera que los colores más obsucuros elucidarán qué estados son los más localizados.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;building finite sistems&quot;</span><span class="p">)</span>
 <span class="n">L</span><span class="o">=</span><span class="mi">100</span>
@@ -2246,6 +2503,7 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>building finite sistems
 </pre></div>
@@ -2253,6 +2511,11 @@ Wall time: 4.53 µs
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting eigenvectors and eigenvalues&quot;</span><span class="p">)</span>
 <span class="n">a</span><span class="o">=</span><span class="mi">1</span>
@@ -2269,6 +2532,7 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting eigenvectors and eigenvalues
 </pre></div>
@@ -2276,6 +2540,11 @@ Wall time: 4.53 µs
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculating IPR&quot;</span><span class="p">)</span>
 <span class="n">nBands</span><span class="p">,</span><span class="n">nkpts</span><span class="p">,</span><span class="n">nsites</span><span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">ψk1</span><span class="p">)</span>
@@ -2295,6 +2564,7 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating IPR
 </pre></div>
@@ -2302,6 +2572,11 @@ Wall time: 4.53 µs
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span>   <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1">#</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Ekfin2YZ</span><span class="p">)):</span>
@@ -2318,12 +2593,13 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_53_0.png" src="_images/page6_53_0.png" />
+<img alt="_images/9377552b9cd6233b539ec48dea1863487321b1f9b749301a87586013a75d79d4.png" src="_images/9377552b9cd6233b539ec48dea1863487321b1f9b749301a87586013a75d79d4.png" />
 </div>
 </div>
 <div class="section" id="interactivo">
-<h2>Interactivo<a class="headerlink" href="#interactivo" title="Permalink to this headline">¶</a></h2>
+<h2>Interactivo<a class="headerlink" href="#interactivo" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
@@ -2333,6 +2609,11 @@ Wall time: 4.53 µs
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Parámetros</span>
 
@@ -2393,15 +2674,19 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "000e19abc9754d4b8062b43837190916", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "000e19abc9754d4b8062b43837190916", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="section" id="subplots">
-<h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">¶</a></h2>
+<h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">WSHTot</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">tx</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="mf">1.5</span><span class="p">):</span>
     <span class="c1">#hopping perpendicular </span>
@@ -2451,8 +2736,14 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span>
                        <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
@@ -2499,8 +2790,9 @@ Wall time: 4.53 µs
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/page6_59_0.png" src="_images/page6_59_0.png" />
+<img alt="_images/be4e64ed2c6dd04b0617a18a5fc59e35e34bd91186a53b692167bc2512940b7e.png" src="_images/be4e64ed2c6dd04b0617a18a5fc59e35e34bd91186a53b692167bc2512940b7e.png" />
 </div>
 </div>
 </div>
@@ -2518,7 +2810,7 @@ Wall time: 4.53 µs
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2526,46 +2818,121 @@ Wall time: 4.53 µs
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="page5.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><center> Hamiltoniano del sistema </center></p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="page5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><center> Hamiltoniano del sistema </center></p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="page7.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="page7.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Semimetal de Weyl deformado</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Antonio Doñez<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center> Hamiltoniano del sistema – Minimal Models </center></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-distintos-planos-del-material">Exploración de la estructura de bandas en distintos planos del material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-x">Exploración de la estructura de bandas en el material finito en X</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-y">Exploración de la estructura de bandas en el material finito en Y</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-la-estructura-de-bandas-en-el-material-finito-en-z">Exploración de la estructura de bandas en el material finito en Z</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-of-states-fo-wsm-ti-histogram">Density of States fo WSM-TI- Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-a-infinite-system">For a infinite system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-a-finite-system">For a finite system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-dos-for-a-finite-system-vs-a-infinite-system">Comparing DOS for a finite system vs a infinite system</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-de-estados-usando-funciones-de-green">Densidad de estados usando Funciones de Green.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-de-esatdos-acomplada-con-la-estructura-de-bandas">Densidad de esatdos acomplada con la estructura de bandas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ipr">IPR</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivo">Interactivo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots">Subplots</a></li>
+</ul>
+</li>
+</ul>
 
-      </div>
-    </div>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Antonio Doñez
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
