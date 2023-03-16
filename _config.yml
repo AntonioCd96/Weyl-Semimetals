@@ -10,13 +10,15 @@ launch_buttons:
 
 notebook_interface : "notebook"
 
-
+html:
+  home_page_in_navbar         : false
 
 
 latex:
   latex_engine : "xelatex"      
   latex_documents:
     targetname: book.tex
+
 
 bibtex_bibfiles:
   - references.bib
@@ -26,14 +28,23 @@ sphinx:
     bibtex_reference_style: author_year
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    mathjax_path:
+      "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"
+    mathjax3_config:
+      TeX:
+        Macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat" : ["\\left[\\begin{array}"]
+          "emat" : ["\\end{array}\\right]"]
 
 execute:
-  execute_notebooks: cache
+  execute_notebooks: "force"
 
 
 parse:
   myst_enable_extensions:
-                                 # don't forget to list any other extensions you want enabled,
+    # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
     - amsmath
     - dollarmath

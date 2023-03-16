@@ -21,13 +21,6 @@
 # 
 # 
 
-# In[5]:
-
-
-from IPython.display import *
-Video("Rayleigh_scattering_animated.mp4")
-
-
 # ## Raman Effect
 # 
 # `````{admonition} History
@@ -98,7 +91,7 @@ Video("Rayleigh_scattering_animated.mp4")
 
 # # Euler equation approach
 
-# In[24]:
+# In[36]:
 
 
 import matplotlib.pyplot as plt
@@ -106,7 +99,7 @@ import imageio
 from pylab import *
 
 
-# In[25]:
+# In[37]:
 
 
 e=1 # electron charge
@@ -121,7 +114,7 @@ k2=150 #string constant
 m=m1*m2/(m1+m2) #reduced mass
 
 
-# In[26]:
+# In[38]:
 
 
 def vibra(part,p_0,k, m1, m2):
@@ -138,7 +131,7 @@ def vibra(part,p_0,k, m1, m2):
     return  acelv
 
 
-# In[27]:
+# In[39]:
 
 
 
@@ -203,7 +196,7 @@ def graf(pn_0,vc_0,pn_k,vc_k,pn_m,vc_m):
     plt.show()
 
 
-# In[29]:
+# In[40]:
 
 
 # #Definir parametros
@@ -494,22 +487,37 @@ plot(t,position_k, label="k")
 leg = plt.legend()
 
 
-# In[ ]:
+# In[41]:
 
 
+import ipywidgets as widgets
+
+widgets.RadioButtons(
+    options=['pepperoni', 'pineapple', 'anchovies'],
+#    value='pineapple', # Defaults to 'pineapple'
+#    layout={'width': 'max-content'}, # If the items' names are long
+    description='Pizza topping:',
+    disabled=False
+)
 
 
-
-# In[ ]:
-
+# In[42]:
 
 
+import plotly.express as px
+data = px.data.iris()
+data.head()
 
 
-# In[ ]:
+# In[43]:
 
 
-
+import plotly.express as px
+df = px.data.gapminder()
+fig = px.scatter(df, x="gdpPercap", y="lifeExp", animation_frame="year", animation_group="country",
+           size="pop", color="continent", hover_name="country", facet_col="continent",
+           log_x=True, size_max=45, range_x=[100,100000], range_y=[25,90])
+fig.show()
 
 
 # In[ ]:
