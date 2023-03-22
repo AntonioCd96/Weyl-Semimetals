@@ -3,5 +3,5 @@ En esta página[^1] encontrarás una breve introducción a los semimetales de We
 ![Strain en un Semimetal de Weyl](StrainSem.jpg)
 
 
-[^1]: Agradezco el apoyo económico otorgado por el proyecto CONACyT Frontera No. 428214 en la realización de este trabajo.
+[^1]: Agradezco el apoyo económico otorgado por el proyecto CONACyT Frontera No. 428214 y PAPIIT IA106021 en la realización de este trabajo.
 

@@ -1,19 +1,27 @@
 Traceback (most recent call last):
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/nbclient/client.py", line 1093, in execute
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
     return future.result()
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/nbclient/client.py", line 559, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 608, in async_setup_kernel
+    yield
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/nbclient/client.py", line 854, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "/home/cd96/anaconda3/envs/jbook/lib/python3.9/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/cd96/mambaforge/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -24,9 +32,9 @@ palette = Cubehelix.make(start=-0.5, rotation=0.3,reverse=True,n=10)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_274/4023577175.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0mpalettable[0m[0;34m.[0m[0mcubehelix[0m [0;32mimport[0m [0mCubehelix[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mpalette[0m [0;34m=[0m [0mCubehelix[0m[0;34m.[0m[0mmake[0m[0;34m([0m[0mstart[0m[0;34m=[0m[0;34m-[0m[0;36m0.5[0m[0;34m,[0m [0mrotation[0m[0;34m=[0m[0;36m0.3[0m[0;34m,[0m[0mreverse[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m[0mn[0m[0;34m=[0m[0;36m10[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+Cell [0;32mIn[3], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpalettable[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcubehelix[39;00m [38;5;28;01mimport[39;00m Cubehelix
+[1;32m      2[0m palette [38;5;241m=[39m Cubehelix[38;5;241m.[39mmake(start[38;5;241m=[39m[38;5;241m-[39m[38;5;241m0.5[39m, rotation[38;5;241m=[39m[38;5;241m0.3[39m,reverse[38;5;241m=[39m[38;5;28;01mTrue[39;00m,n[38;5;241m=[39m[38;5;241m10[39m)
 
 [0;31mModuleNotFoundError[0m: No module named 'palettable'
 ModuleNotFoundError: No module named 'palettable'
