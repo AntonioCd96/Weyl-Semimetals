@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Semimetal de Weyl deformado &#8212; Semimetales de Weyl</title>
   
   
@@ -45,10 +46,13 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
@@ -401,7 +405,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="semimetal-de-weyl-deformado">
+  <section class="tex2jax_ignore mathjax_ignore" id="semimetal-de-weyl-deformado">
 <h1>Semimetal de Weyl deformado<a class="headerlink" href="#semimetal-de-weyl-deformado" title="Permalink to this heading">#</a></h1>
 <p>En esta sección se presenta el resultado de nuestra investigación, el cual es la introducción perturbación de nuestro semimetal de Weyl de manera mécanica.</p>
 <div class="cell tag_hide-input docutils container">
@@ -455,12 +459,12 @@ document.write(`
 </div>
 </details>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="hamiltoniano-del-sistema">
+<section class="tex2jax_ignore mathjax_ignore" id="hamiltoniano-del-sistema">
 <h1>Hamiltoniano del sistema<a class="headerlink" href="#hamiltoniano-del-sistema" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-4a4478c2-4b19-4744-a083-909bde827dd5">
-<span class="eqno">(8)<a class="headerlink" href="#equation-4a4478c2-4b19-4744-a083-909bde827dd5" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-844a6644-2694-4530-bb6c-38e8d39aac07">
+<span class="eqno">(8)<a class="headerlink" href="#equation-844a6644-2694-4530-bb6c-38e8d39aac07" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 H(k) = \left[
 \begin{array}{cc}
 \frac{\gamma }{2}(e^{ik_xa}+e^{-ik_xa}-e^{ik_0a}-e^{-ik_0a})-\frac{t}{i}(e^{ik_za}-e^{-ik_za}) &amp; 
@@ -486,7 +490,7 @@ H(k) = \left[
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_303</span><span class="o">/</span><span class="mf">4023577175.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">palettable.cubehelix</span> <span class="kn">import</span> <span class="n">Cubehelix</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">Cubehelix</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
@@ -554,12 +558,12 @@ H(k) = \left[
 </div>
 </details>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="introduccion-del-strain-en-el-hamiltoniano">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion-del-strain-en-el-hamiltoniano">
 <h1>Introducción del Strain en el Hamiltoniano<a class="headerlink" href="#introduccion-del-strain-en-el-hamiltoniano" title="Permalink to this heading">#</a></h1>
 <p>Los hopping los modificaremos de la siguiente forma.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9ebb255-0e19-4f8d-bf27-6ed3eb1883d7">
-<span class="eqno">(9)<a class="headerlink" href="#equation-a9ebb255-0e19-4f8d-bf27-6ed3eb1883d7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-60995551-86d8-4e1a-a0fc-be869e66b059">
+<span class="eqno">(9)<a class="headerlink" href="#equation-60995551-86d8-4e1a-a0fc-be869e66b059" title="Permalink to this equation">#</a></span>\[\begin{align}
 t_{ij} = t^0_{ij}e^{\beta(1-r_{ij}/a_{\text{nn}})}
 \end{align}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(a_{\text{nn}}\)</span> es la distancia de equilibrio.</p>
@@ -790,7 +794,7 @@ t_{ij} = t^0_{ij}e^{\beta(1-r_{ij}/a_{\text{nn}})}
 </div>
 </details>
 </div>
-<div class="section" id="comparacion-de-un-sistema-tipico-de-wsm-tipo-i-no-perturbado-con-un-sistema-perturbado">
+<section id="comparacion-de-un-sistema-tipico-de-wsm-tipo-i-no-perturbado-con-un-sistema-perturbado">
 <h2>Comparación de un sistema tipico de WSM tipo I no perturbado con un sistema perturbado.<a class="headerlink" href="#comparacion-de-un-sistema-tipico-de-wsm-tipo-i-no-perturbado-con-un-sistema-perturbado" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -858,8 +862,8 @@ t_{ij} = t^0_{ij}e^{\beta(1-r_{ij}/a_{\text{nn}})}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ubicacion-de-los-arcos-de-fermi-estados-de-superficie-o-borde">
+</section>
+<section id="ubicacion-de-los-arcos-de-fermi-estados-de-superficie-o-borde">
 <h2>Ubicación de los arcos de Fermi: estados de superficie o borde<a class="headerlink" href="#ubicacion-de-los-arcos-de-fermi-estados-de-superficie-o-borde" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -888,8 +892,8 @@ t_{ij} = t^0_{ij}e^{\beta(1-r_{ij}/a_{\text{nn}})}
 </div>
 </div>
 <p>En la figura anterior se puede denotar que los estados electrónicos más localizados se encuentran en los bordes del material. De estudios anteriores sabemos que los arcos de Fermi son los estados con mayor localuzación, por lo que podemos concluir que dichos estados de superficie corresponden a los arcos de Fermi.</p>
-</div>
-<div class="section" id="evolucion-del-sistema-perturbado-al-aumentar-el-parametro-de-deformacion-n">
+</section>
+<section id="evolucion-del-sistema-perturbado-al-aumentar-el-parametro-de-deformacion-n">
 <h2>Evolución del sistema perturbado al aumentar el parámetro de deformación <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#evolucion-del-sistema-perturbado-al-aumentar-el-parametro-de-deformacion-n" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -995,8 +999,8 @@ Wall time: 1min 24s
 </div>
 </details>
 </div>
-</div>
-<div class="section" id="como-se-ve-afectada-la-densidad-de-estados">
+</section>
+<section id="como-se-ve-afectada-la-densidad-de-estados">
 <h2>¿Cómo se ve afectada la densidad de estados?<a class="headerlink" href="#como-se-ve-afectada-la-densidad-de-estados" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1128,9 +1132,9 @@ Wall time: 1min 24s
 <img alt="_images/899253a24e2e73b07c8c7fdbb322b58d74ddb444b5e694f8c6310e93617c2955.png" src="_images/899253a24e2e73b07c8c7fdbb322b58d74ddb444b5e694f8c6310e93617c2955.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="obtencion-del-ipr">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="obtencion-del-ipr">
 <h1>Obtención del IPR<a class="headerlink" href="#obtencion-del-ipr" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1289,8 +1293,8 @@ Wall time: 1min 24s
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="nuevo-corte-en-z-visualizacion-de-los-arcos-de-fermi">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nuevo-corte-en-z-visualizacion-de-los-arcos-de-fermi">
 <h1>Nuevo corte en Z: Visualización de los arcos de fermi<a class="headerlink" href="#nuevo-corte-en-z-visualizacion-de-los-arcos-de-fermi" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6433,7 +6437,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 </div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
