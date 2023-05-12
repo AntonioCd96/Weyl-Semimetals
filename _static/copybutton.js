@@ -20,7 +20,7 @@ const messages = {
   },
   'fr' : {
     'copy': 'Copier',
-    'copy_to_clipboard': 'Copié dans le presse-papier',
+    'copy_to_clipboard': 'Copier dans le presse-papier',
     'copy_success': 'Copié !',
     'copy_failure': 'Échec de la copie',
   },
@@ -120,7 +120,11 @@ const temporarilyChangeTooltip = (el, oldText, newText) => {
 // Changes the copy button icon for two seconds, then changes it back
 const temporarilyChangeIcon = (el) => {
   el.innerHTML = iconCheck;
+<<<<<<< HEAD
   setTimeout(() => {el.innerHTML = iconCopy}, timeoutIcon)
+=======
+  setTimeout(() => {el.innerHTML = iconCopy}, 2000)
+>>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
 }
 
 const addCopyButtonToCodeCells = () => {
@@ -224,7 +228,7 @@ var copyTargetText = (trigger) => {
   var target = document.querySelector(trigger.attributes['data-clipboard-target'].value);
 
   // get filtered text
-  let exclude = '.linenos, .gp';
+  let exclude = '.linenos';
 
   let text = filterText(target, exclude);
   return formatCopyText(text, '', false, true, true, true, '', '')

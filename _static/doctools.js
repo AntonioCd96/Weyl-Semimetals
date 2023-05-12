@@ -82,11 +82,21 @@ const _highlightText = (thisNode, text, className) => {
 /**
  * Small JavaScript module for the documentation.
  */
+<<<<<<< HEAD
 const Documentation = {
   init: () => {
     Documentation.highlightSearchWords();
     Documentation.initDomainIndexTable();
     Documentation.initOnKeyListeners();
+=======
+var Documentation = {
+
+  init : function() {
+    this.fixFirefoxAnchorBug();
+    this.highlightSearchWords();
+    this.initIndexTable();
+    this.initOnKeyListeners();
+>>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
   },
 
   /**
@@ -159,6 +169,7 @@ const Documentation = {
   /**
    * helper function to hide the search marks again
    */
+<<<<<<< HEAD
   hideSearchWords: () => {
     document
       .querySelectorAll("#searchbox .highlight-link")
@@ -169,6 +180,21 @@ const Documentation = {
     const url = new URL(window.location);
     url.searchParams.delete("highlight");
     window.history.replaceState({}, "", url);
+=======
+  hideSearchWords : function() {
+    $('#searchbox .highlight-link').fadeOut(300);
+    $('span.highlighted').removeClass('highlighted');
+    var url = new URL(window.location);
+    url.searchParams.delete('highlight');
+    window.history.replaceState({}, '', url);
+  },
+
+   /**
+   * helper function to focus on search bar
+   */
+  focusSearchBar : function() {
+    $('input[name=q]').first().focus();
+>>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
   },
 
   /**
@@ -202,6 +228,7 @@ const Documentation = {
     if (DOCUMENTATION_OPTIONS.COLLAPSE_INDEX) togglerElements.forEach(toggler);
   },
 
+<<<<<<< HEAD
   initOnKeyListeners: () => {
     // only install a listener if it is really needed
     if (
@@ -244,6 +271,57 @@ const Documentation = {
             if (!DOCUMENTATION_OPTIONS.ENABLE_SEARCH_SHORTCUTS) break;
             Documentation.hideSearchWords();
             event.preventDefault();
+=======
+  initOnKeyListeners: function() {
+    // only install a listener if it is really needed
+    if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS &&
+        !DOCUMENTATION_OPTIONS.ENABLE_SEARCH_SHORTCUTS)
+        return;
+
+    $(document).keydown(function(event) {
+      var activeElementType = document.activeElement.tagName;
+      // don't navigate when in search box, textarea, dropdown or button
+      if (activeElementType !== 'TEXTAREA' && activeElementType !== 'INPUT' && activeElementType !== 'SELECT'
+          && activeElementType !== 'BUTTON') {
+        if (event.altKey || event.ctrlKey || event.metaKey)
+          return;
+
+          if (!event.shiftKey) {
+            switch (event.key) {
+              case 'ArrowLeft':
+                if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS)
+                  break;
+                var prevHref = $('link[rel="prev"]').prop('href');
+                if (prevHref) {
+                  window.location.href = prevHref;
+                  return false;
+                }
+                break;
+              case 'ArrowRight':
+                if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS)
+                  break;
+                var nextHref = $('link[rel="next"]').prop('href');
+                if (nextHref) {
+                  window.location.href = nextHref;
+                  return false;
+                }
+                break;
+              case 'Escape':
+                if (!DOCUMENTATION_OPTIONS.ENABLE_SEARCH_SHORTCUTS)
+                  break;
+                Documentation.hideSearchWords();
+                return false;
+          }
+        }
+
+        // some keyboard layouts may need Shift to get /
+        switch (event.key) {
+          case '/':
+            if (!DOCUMENTATION_OPTIONS.ENABLE_SEARCH_SHORTCUTS)
+              break;
+            Documentation.focusSearchBar();
+            return false;
+>>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
         }
       }
 

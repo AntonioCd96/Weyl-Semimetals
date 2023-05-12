@@ -257,7 +257,12 @@ const Search = {
         return;
 
       // stem the word
+<<<<<<< HEAD
       let word = stemmer.stemWord(queryTermLower);
+=======
+      var word = stemmer.stemWord(tmp[i].toLowerCase());
+      var toAppend;
+>>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
       // select the correct list
       if (word[0] === "-") excludedTerms.add(word.substr(1));
       else {
@@ -320,7 +325,79 @@ const Search = {
     // console.info("search results:", Search.lastresults);
 
     // print the results
+<<<<<<< HEAD
     _displayNextItem(results, results.length, highlightTerms, searchTerms);
+=======
+    var resultCount = results.length;
+    function displayNextItem() {
+      // results left, load the summary and display it
+      if (results.length) {
+        var item = results.pop();
+        var listItem = $('<li></li>');
+        var requestUrl = "";
+        var linkUrl = "";
+        if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
+          // dirhtml builder
+          var dirname = item[0] + '/';
+          if (dirname.match(/\/index\/$/)) {
+            dirname = dirname.substring(0, dirname.length-6);
+          } else if (dirname == 'index/') {
+            dirname = '';
+          }
+          requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
+          linkUrl = requestUrl;
+
+        } else {
+          // normal html builders
+          requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item[0] + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+          linkUrl = item[0] + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
+        }
+        listItem.append($('<a/>').attr('href',
+            linkUrl +
+            highlightstring + item[2]).html(item[1]));
+        if (item[3]) {
+          listItem.append($('<span> (' + item[3] + ')</span>'));
+          Search.output.append(listItem);
+          setTimeout(function() {
+            displayNextItem();
+          }, 5);
+        } else if (DOCUMENTATION_OPTIONS.SHOW_SEARCH_SUMMARY) {
+          $.ajax({url: requestUrl,
+                  dataType: "text",
+                  complete: function(jqxhr, textstatus) {
+                    var data = jqxhr.responseText;
+                    if (data !== '' && data !== undefined) {
+                      var summary = Search.makeSearchSummary(data, searchterms, hlterms);
+                      if (summary) {
+                        listItem.append(summary);
+                      }
+                    }
+                    Search.output.append(listItem);
+                    setTimeout(function() {
+                      displayNextItem();
+                    }, 5);
+                  }});
+        } else {
+          // just display title
+          Search.output.append(listItem);
+          setTimeout(function() {
+            displayNextItem();
+          }, 5);
+        }
+      }
+      // search finished, update title and status message
+      else {
+        Search.stopPulse();
+        Search.title.text(_('Search Results'));
+        if (!resultCount)
+          Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
+        else
+            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
+        Search.status.fadeIn(500);
+      }
+    }
+    displayNextItem();
+>>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
   },
 
   /**
