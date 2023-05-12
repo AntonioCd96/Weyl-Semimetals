@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'page7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -463,8 +463,8 @@ document.write(`
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="hamiltoniano-del-sistema">
 <h1>Hamiltoniano del sistema<a class="headerlink" href="#hamiltoniano-del-sistema" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-844a6644-2694-4530-bb6c-38e8d39aac07">
-<span class="eqno">(8)<a class="headerlink" href="#equation-844a6644-2694-4530-bb6c-38e8d39aac07" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-77147a63-5ef9-4eef-b583-90bbc4360a02">
+<span class="eqno">(8)<a class="headerlink" href="#equation-77147a63-5ef9-4eef-b583-90bbc4360a02" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 H(k) = \left[
 \begin{array}{cc}
 \frac{\gamma }{2}(e^{ik_xa}+e^{-ik_xa}-e^{ik_0a}-e^{-ik_0a})-\frac{t}{i}(e^{ik_za}-e^{-ik_za}) &amp; 
@@ -562,8 +562,8 @@ H(k) = \left[
 <section class="tex2jax_ignore mathjax_ignore" id="introduccion-del-strain-en-el-hamiltoniano">
 <h1>Introducción del Strain en el Hamiltoniano<a class="headerlink" href="#introduccion-del-strain-en-el-hamiltoniano" title="Permalink to this heading">#</a></h1>
 <p>Los hopping los modificaremos de la siguiente forma.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60995551-86d8-4e1a-a0fc-be869e66b059">
-<span class="eqno">(9)<a class="headerlink" href="#equation-60995551-86d8-4e1a-a0fc-be869e66b059" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-77047168-93dd-4464-85e1-fe5b251b2d07">
+<span class="eqno">(9)<a class="headerlink" href="#equation-77047168-93dd-4464-85e1-fe5b251b2d07" title="Permalink to this equation">#</a></span>\[\begin{align}
 t_{ij} = t^0_{ij}e^{\beta(1-r_{ij}/a_{\text{nn}})}
 \end{align}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(a_{\text{nn}}\)</span> es la distancia de equilibrio.</p>
@@ -6465,7 +6465,10 @@ if (IPython.notebook.kernel !== null) {
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="page6.html"
@@ -6485,7 +6488,10 @@ if (IPython.notebook.kernel !== null) {
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -6520,7 +6526,7 @@ if (IPython.notebook.kernel !== null) {
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -6550,7 +6556,7 @@ By Antonio Doñez
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -6559,8 +6565,8 @@ By Antonio Doñez
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
