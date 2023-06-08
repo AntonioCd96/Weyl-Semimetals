@@ -120,11 +120,7 @@ const temporarilyChangeTooltip = (el, oldText, newText) => {
 // Changes the copy button icon for two seconds, then changes it back
 const temporarilyChangeIcon = (el) => {
   el.innerHTML = iconCheck;
-<<<<<<< HEAD
   setTimeout(() => {el.innerHTML = iconCopy}, timeoutIcon)
-=======
-  setTimeout(() => {el.innerHTML = iconCopy}, 2000)
->>>>>>> 8d10c34345d3e6edb61b9525a2e7c8c6a5ac7485
 }
 
 const addCopyButtonToCodeCells = () => {
