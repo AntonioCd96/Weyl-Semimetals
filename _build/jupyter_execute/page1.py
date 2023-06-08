@@ -175,7 +175,7 @@ KX,KZ = meshgrid(k_xb,k_zb)
 
 
 DATA = [ go.Surface( z=Enm, x=(KX),y=(KZ),opacity=0.9,  colorbar_x=0.75,colorscale='deep'),
-        go.Surface( z=Enp,x=KX,y=KZ,opacity=0.6, colorbar_x=0.9)]
+        go.Surface( z=Enp,x=KX,y=KZ,opacity=0.6, colorbar_x=0.9,showscale=False)]
 #          
 
 

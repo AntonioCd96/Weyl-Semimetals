@@ -11,7 +11,7 @@ launch_buttons:
 notebook_interface : "notebook"
 
 html:
-  home_page_in_navbar         : false
+  home_page_in_navbar  : false
 
 
 latex:
@@ -38,7 +38,7 @@ sphinx:
           "emat" : ["\\end{array}\\right]"]
 
 execute:
-  execute_notebooks: "force"
+  execute_notebooks: force
 
 
 parse:
